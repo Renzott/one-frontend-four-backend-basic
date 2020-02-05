@@ -1,0 +1,17 @@
+<div class="col-md-4 " *ngFor="let photo of photos">
+    <div class="card text-center">
+        <div class="card-header bg-light text-black d-flex justify-content-between align-item-center">
+            {{photo.title}}
+            <button class="btn btn-danger" (click)="deletePhoto(photo.id)">
+                <i class="fa fa-trash"></i>
+            </button>
+        </div>
+        <img [src]="photo.image" class="card-img-top">
+        <div class="card-body">
+            <p>{{photo.description}}</p>
+            <a [routerLink]="['/photos/edit', photo.id]" class="btn btn-info btn-block">
+                Edit Photo
+            </a>
+        </div>
+    </div>
+</div>
